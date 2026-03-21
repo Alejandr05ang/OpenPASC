@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trayectoria | OpenPASC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para la línea de tiempo */
+        .timeline-section {
+            padding: 140px 0 100px;
+            background: var(--bg-light);
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* La línea central */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        /* Los círculos de la línea */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            transition: 0.3s;
+        }
+
+        .left { left: 0; text-align: right; }
+        .right { left: 50%; text-align: left; }
+
+        .right::after { left: -10px; }
+
+        .content-card {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .content-card:hover {
+            transform: scale(1.05);
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .content-card h3 {
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .content-card:hover h3 { color: var(--white); }
+
+        .date-label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        /* Texto largo oculto (Explicación) */
+        .extra-info {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 0.85rem;
+            margin-top: 0;
+            color: #b2bec3;
+        }
+
+        .content-card:hover .extra-info {
+            max-height: 200px;
+            margin-top: 15px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline-container::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
+            .timeline-item::after { left: 21px; }
+            .right { left: 0%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">Open<span>PASC</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="btn-nav">Inicio</a></li>
+                    <li><a href="https://www.youtube.com" target="_blank" class="btn-nav">Probar WishFlow</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="timeline-section">
+        <div class="container" style="text-align: center; margin-bottom: 50px;">
+            <span class="badge">Evolución</span>
+            <h1 class="section-title">Nuestra Trayectoria</h1>
+            <p style="color: var(--text-light);">Pasa el mouse sobre cada hito para conocer los detalles de nuestro crecimiento.</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-item left">
+                <div class="content-card">
+                    <span class="date-label">20 de Marzo, 2026</span>
+                    <h3>Invención de OpenPASC</h3>
+                    <p>Fundación del grupo de desarrollo tecnológico.</p>
+                    <div class="extra-info">
+                        Se establece OpenPASC como un equipo de desarrollo de élite enfocado en soluciones para el sector retail, integrando infraestructuras de Clover y Fiserv desde el primer día.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="content-card">
+                    <span class="date-label">21 de Marzo, 2026</span>
+                    <h3>Desarrollo de WishFlow</h3>
+                    <p>Construcción del motor de intención de compra.</p>
+                    <div class="extra-info">
+                        Ejecución técnica del MVP WishFlow, logrando la sincronización con el catálogo y la creación de un motor contextual capaz de rankear productos según el clima y la disponibilidad.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="content-card">
+                    <span class="date-label">22 de Marzo, 2026</span>
+                    <h3>Lanzamiento Mundial</h3>
+                    <p>Despliegue oficial en la infraestructura Clover.</p>
+                    <div class="extra-info">
+                        Activación de WishFlow para el mercado global de merchants, introduciendo por primera vez la capa de rewards portables mediante la red Avalanche C-Chain.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="content-card">
+                    <span class="date-label">Finales de 2026</span>
+                    <h3>Red Colaborativa</h3>
+                    <p>Más de 25 empresas aliadas activas.</p>
+                    <div class="extra-info">
+                        Crecimiento exponencial de la red, permitiendo que las recompensas circulen libremente entre diversos comercios, generando tráfico cruzado y una economía colaborativa sólida.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="content-card">
+                    <span class="date-label">2027</span>
+                    <h3>Nuevas Invenciones</h3>
+                    <p>Coalition Loyalty y expansión regional.</p>
+                    <div class="extra-info">
+                        Implementación de programas de lealtad por barrios y food courts. Publicación de WishFlow en el Clover App Market como una solución comercial completa.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="content-card">
+                    <span class="date-label">Próximamente</span>
+                    <h3>En Desarrollo</h3>
+                    <p>Inteligencia avanzada y wallets invisibles.</p>
+                    <div class="extra-info">
+                        Trabajamos en la integración de experiencias Web3 invisibles para el usuario final y un motor de scoring alimentado por machine learning basado en conversiones reales.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand"><div class="brand-logo">OP</div><span class="brand-name">OpenPASC</span></div>
+                    <p class="footer-about">Transformando señales de intención en ventas activables.</p>
+                    <p class="residencia"><img src="location.svg" alt="Ubicación" class="footer-icon-svg">Cuenca, Ecuador</p>
+                    <p class="email-footer">openpasc@flow.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terminos.html">Términos y Condiciones</a></li>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="mision.html">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Síguenos</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/JosueSaenz2006" target="_blank" class="social-link"><img src="link.svg" alt="GitHub" class="social-icon-svg"> GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2026 OpenPASC - WishFlow</p></div>
+        </div>
+    </footer>
+
+</body>
+</html>

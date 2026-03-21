@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad | OpenPASC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">Open<span>PASC</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="btn-nav">Inicio</a></li>
+                    <li><a href="https://www.youtube.com" target="_blank" class="btn-nav">Probar WishFlow</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section" style="padding-top: 140px;">
+        <div class="container" style="max-width: 900px;">
+            <h1 class="section-title">Política de Privacidad y Tratamiento de Datos</h1>
+            <p style="color: var(--text-light); margin-bottom: 40px;">Fecha de actualización: 20 de marzo de 2026.</p>
+
+            <div class="info-content" style="margin-bottom: 40px;">
+                <h3>1. Origen y Recolección de la Información</h3>
+                <p>WishFlow recopila información operativa del Merchant directamente a través de las APIs de Clover. Esto incluye datos de catálogo de productos, niveles de inventario, perfiles de clientes registrados en el POS e historial de órdenes. Adicionalmente, recopilamos señales contextuales como geolocalización, condiciones climáticas y parámetros temporales para el funcionamiento del motor de scoring.</p>
+            </div>
+
+            <div class="info-content" style="margin-bottom: 40px;">
+                <h3>2. Uso de la Información Operativa</h3>
+                <p>La información recolectada se utiliza estrictamente para identificar intenciones de compra y transformarlas en oportunidades de venta activables mediante el panel de control del Merchant. No utilizamos modelos de machine learning entrenados con datos externos para la fase de MVP; todas las recomendaciones se basan en reglas de negocio predefinidas y datos locales del Merchant.</p>
+            </div>
+
+            <div class="info-content" style="margin-bottom: 40px;">
+                <h3>3. Seguridad en la Capa de Blockchain</h3>
+                <p>Para garantizar la privacidad de los datos sensibles del negocio, ninguna información identificable de clientes o transacciones financieras detalladas se almacena on-chain. La red Avalanche únicamente registra el estado de emisión y redención de los rewards para asegurar la integridad de la red colaborativa de merchants.</p>
+            </div>
+
+            <div class="info-content" style="margin-bottom: 40px;">
+                <h3>4. Retención y Acceso</h3>
+                <p>OpenPASC mantiene los datos procesados en un entorno de backend seguro utilizando tecnologías como FastAPI y Node.js para orquestar la comunicación entre Clover y los contratos inteligentes. Los Merchants pueden revocar el acceso a sus datos en cualquier momento mediante la desinstalación de la aplicación en el Clover App Market.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand"><div class="brand-logo">OP</div><span class="brand-name">OpenPASC</span></div>
+                    <p class="footer-about">Seguridad y transparencia en el tratamiento de datos comerciales.</p>
+                    <p class="residencia"><img src="location.svg" alt="Ubicación" class="footer-icon-svg">Cuenca, Ecuador</p>
+                    <p class="email-footer">openpasc@flow.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terminos.html">Términos y Condiciones</a></li>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="mision.html">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Síguenos</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/JosueSaenz2006" target="_blank" class="social-link"><img src="link.svg" alt="GitHub" class="social-icon-svg"> GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2026 OpenPASC - WishFlow</p></div>
+        </div>
+    </footer>
+</body>
+</html>
